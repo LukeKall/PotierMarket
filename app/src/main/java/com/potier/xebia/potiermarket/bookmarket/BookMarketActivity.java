@@ -2,6 +2,7 @@ package com.potier.xebia.potiermarket.bookmarket;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ public class BookMarketActivity extends AppCompatActivity implements BookMarketV
         mRecyclerView = findViewById(R.id.books_recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,
+                DividerItemDecoration.VERTICAL));
     }
 
     private void init() {

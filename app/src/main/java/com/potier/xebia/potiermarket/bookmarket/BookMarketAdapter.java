@@ -35,7 +35,7 @@ public class BookMarketAdapter extends RecyclerView.Adapter<BookMarketAdapter.Vi
         void setBindBook(final Book book, final OnBookClickListener onBookClickListener){
             bookTitleView.setText(book.getTitle());
             bookSysnopsisView.setText(book.getSynopsis().get((0)));
-            bookPriceView.setText(book.getPrice());
+            bookPriceView.setText(book.getPrice() + "€");
 
             itemView.setOnClickListener(new Button.OnClickListener() {
                 @Override
