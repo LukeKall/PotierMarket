@@ -10,14 +10,17 @@ public class Book implements Parcelable {
 
     private String isbn;
     private String title;
-    private String price;
+    private double price;
     private String cover;
     private List<String> synopsis = new ArrayList<>();
+
+    public Book() {
+    }
 
     protected Book(Parcel in) {
         isbn = in.readString();
         title = in.readString();
-        price = in.readString();
+        price = in.readDouble();
         cover = in.readString();
         in.readList(synopsis, null);
     }
@@ -50,11 +53,11 @@ public class Book implements Parcelable {
         this.title = title;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -83,7 +86,7 @@ public class Book implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(isbn);
         dest.writeString(title);
-        dest.writeString(price);
+        dest.writeDouble(price);
         dest.writeString(cover);
         dest.writeList(synopsis);
     }

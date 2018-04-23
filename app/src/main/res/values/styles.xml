@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="bookTitle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="bookPrice">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="bookSynopsis">
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
 </resources>

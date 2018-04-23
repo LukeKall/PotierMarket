@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -41,25 +40,5 @@
             app:layout_constraintHorizontal_weight="2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/book_synopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/bookSynopsis"
-            android:ellipsize="end"
-            android:maxLines="3"
-            app:layout_constraintTop_toBottomOf="@+id/book_title" />
     </android.support.constraint.ConstraintLayout>
-
-    <Button
-        android:id="@+id/add_cart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/add_cart"
-        app:layout_constraintLeft_toRightOf="@+id/book_image"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/book_image"/>
 </android.support.constraint.ConstraintLayout>

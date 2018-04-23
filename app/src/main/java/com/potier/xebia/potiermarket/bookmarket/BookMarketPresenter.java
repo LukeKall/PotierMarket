@@ -9,4 +9,5 @@ public interface BookMarketPresenter {
     void getAllBooks();
     void addBookInCart(Book book);
     List<Book> getCart();
+    void onDestroy();
 }

@@ -14,6 +14,7 @@ public class BookMarketPresenterImpl implements BookMarketPresenter {
 
     private BookMarketView bookMarketView;
     private List<Book> cart = new ArrayList<>();
+    private Call callListBooks;
 
     BookMarketPresenterImpl(BookMarketView bookMarketView) {
         this.bookMarketView = bookMarketView;
@@ -23,7 +24,9 @@ public class BookMarketPresenterImpl implements BookMarketPresenter {
     public void getAllBooks() {
         BookApi bookService = BookApi.bookApi;
 
-        bookService.listBooks().enqueue(new Callback<List<Book>>() {
+        callListBooks = bookService.listBooks();
+
+        callListBooks.enqueue(new Callback<List<Book>>() {
 
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
@@ -45,6 +48,11 @@ public class BookMarketPresenterImpl implements BookMarketPresenter {
     @Override
     public List<Book> getCart() {
         return cart;
+    }
+
+    @Override
+    public void onDestroy() {
+        callListBooks.cancel();
     }
 
 

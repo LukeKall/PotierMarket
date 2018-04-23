@@ -6,6 +6,8 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface BookApi {
 
@@ -13,6 +15,9 @@ public interface BookApi {
 
     @GET("/books")
     Call<List<Book>> listBooks();
+
+    @GET("/books/{ISBNS}/commercialOffers")
+    Call<OfferResponse> listOffers(@Path("ISBNS") String ISBNS);
 
     BookApi bookApi = new Retrofit.Builder()
             .baseUrl(BookApi.ENDPOINT)
